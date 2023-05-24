@@ -8,8 +8,11 @@ let player = ''
 let warning = ''
 let playing = false
 
+reset()
+
 // Eventos
 document.querySelector('.reset').addEventListener('click', reset)
+
 
 // Funções
 function reset(){
@@ -28,4 +31,23 @@ function reset(){
     }
 
     playing = true
+
+    renderSquare()
+    renderInfo()
 }
+
+function renderSquare(){
+    for(let i in square){
+        console.log(`ITEM ${i}`)
+        let item = document.querySelector(`div[data-item=${i}]`)
+        item.innerHTML = square[i]
+
+    }
+}
+
+function renderInfo(){
+    document.querySelector('.vez').innerHTML = player
+    document.querySelector('.resultado').innerHTML = warning
+}
+// 23:15
+
